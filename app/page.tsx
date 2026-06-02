@@ -95,6 +95,19 @@ function FacebookGlyph({ className = "" }: { className?: string }) {
   );
 }
 
+function Wordmark() {
+  return (
+    <span className="flex items-center gap-2">
+      <span className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 shadow-lg shadow-indigo-500/30 ring-1 ring-white/10">
+        <Star className="h-5 w-5 fill-amber-300 text-amber-300" />
+      </span>
+      <span className="text-lg font-bold tracking-tight text-white">
+        Star<span className="text-indigo-400">Sync</span>
+      </span>
+    </span>
+  );
+}
+
 function GoogleConnectButton({
   className = "",
   children = "Connect with Google",
@@ -129,13 +142,8 @@ function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/5 bg-slate-950/70 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
-        <a href="#top" className="flex items-center gap-2">
-          <span className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 shadow-lg shadow-amber-500/30">
-            <Star className="h-5 w-5 fill-slate-950 text-slate-950" />
-          </span>
-          <span className="text-lg font-bold tracking-tight text-white">
-            Star<span className="text-amber-400">Sync</span>
-          </span>
+        <a href="#top">
+          <Wordmark />
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
@@ -219,7 +227,7 @@ function ReviewCard() {
 
 function SocialPostCard() {
   return (
-    <div className="overflow-hidden rounded-2xl border border-amber-400/30 bg-gradient-to-br from-slate-900 to-slate-950 shadow-2xl shadow-amber-500/10">
+    <div className="overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-950 shadow-2xl shadow-indigo-500/10 ring-1 ring-indigo-400/10">
       <div className="flex items-center justify-between border-b border-white/5 px-4 py-2.5">
         <div className="flex items-center gap-2">
           <span className="flex h-6 w-6 items-center justify-center rounded-md bg-gradient-to-br from-amber-400 to-amber-600">
@@ -233,13 +241,13 @@ function SocialPostCard() {
       </div>
 
       <div className="relative p-6">
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-amber-500/10 via-transparent to-indigo-500/10" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-violet-500/10" />
         <div className="relative">
           <div className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-amber-400/15 px-3 py-1 text-xs font-semibold text-amber-300 ring-1 ring-amber-400/30">
             <Sparkles className="h-3.5 w-3.5" />
             5-Star Review
           </div>
-          <Quote className="h-7 w-7 text-amber-400/60" />
+          <Quote className="h-7 w-7 text-indigo-400/60" />
           <p className="mt-2 text-lg font-semibold leading-snug text-white">
             &ldquo;They went completely above and beyond — results that lasted
             longer than anywhere else.&rdquo;
@@ -272,19 +280,19 @@ function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
       {/* ambient glows */}
-      <div className="pointer-events-none absolute -top-40 left-1/2 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-amber-500/10 blur-[120px]" />
-      <div className="pointer-events-none absolute right-0 top-40 h-[30rem] w-[30rem] rounded-full bg-indigo-500/10 blur-[120px]" />
+      <div className="pointer-events-none absolute -top-40 left-1/2 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-indigo-500/15 blur-[120px]" />
+      <div className="pointer-events-none absolute right-0 top-40 h-[30rem] w-[30rem] rounded-full bg-violet-500/10 blur-[120px]" />
 
       <div className="mx-auto max-w-7xl px-4 pb-16 pt-16 sm:px-6 sm:pt-20 lg:grid lg:grid-cols-2 lg:gap-12 lg:px-8 lg:pb-24">
         <div className="flex flex-col justify-center">
           <div className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-slate-300">
-            <Sparkles className="h-3.5 w-3.5 text-amber-400" />
+            <Sparkles className="h-3.5 w-3.5 text-indigo-400" />
             Set-and-forget social proof, on autopilot
           </div>
 
           <h1 className="mt-5 text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
             Put Your 5-Star Google Reviews on{" "}
-            <span className="bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-indigo-300 via-violet-400 to-indigo-500 bg-clip-text text-transparent">
               Social Media Autopilot
             </span>
           </h1>
@@ -297,7 +305,7 @@ function Hero() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <button className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 px-6 py-3 text-sm font-bold text-slate-950 shadow-lg shadow-amber-500/30 transition hover:shadow-xl hover:shadow-amber-500/40">
+            <button className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-indigo-500 to-violet-600 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-indigo-500/30 transition hover:shadow-xl hover:shadow-indigo-500/40">
               Get Started Free
               <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
             </button>
@@ -313,7 +321,7 @@ function Hero() {
               Secure OAuth 2.0
             </span>
             <span className="inline-flex items-center gap-1.5">
-              <Check className="h-4 w-4 text-amber-400" />
+              <Check className="h-4 w-4 text-indigo-400" />
               No credit card required
             </span>
             <span className="inline-flex items-center gap-1.5">
@@ -327,7 +335,7 @@ function Hero() {
         <div className="mt-14 lg:mt-0">
           <div className="relative grid grid-cols-1 items-center gap-4 sm:grid-cols-[1fr_auto_1fr]">
             <ReviewCard />
-            <div className="mx-auto flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 to-amber-600 text-slate-950 shadow-lg shadow-amber-500/30 sm:rotate-0">
+            <div className="mx-auto flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 text-white shadow-lg shadow-indigo-500/30">
               <Sparkles className="h-5 w-5" />
             </div>
             <SocialPostCard />
@@ -375,14 +383,14 @@ function HowItWorks() {
 
         <div className="relative mt-14 grid gap-6 md:grid-cols-3">
           {/* connecting line on desktop */}
-          <div className="pointer-events-none absolute left-0 right-0 top-9 hidden h-px bg-gradient-to-r from-transparent via-amber-400/30 to-transparent md:block" />
+          <div className="pointer-events-none absolute left-0 right-0 top-9 hidden h-px bg-gradient-to-r from-transparent via-indigo-400/30 to-transparent md:block" />
           {steps.map((s, i) => (
             <div
               key={s.title}
-              className="relative rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm transition hover:border-amber-400/30 hover:bg-white/[0.05]"
+              className="relative rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm transition hover:border-indigo-400/30 hover:bg-white/[0.05]"
             >
               <div className="flex items-center gap-4">
-                <span className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 text-slate-950 shadow-lg shadow-amber-500/20">
+                <span className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 text-white shadow-lg shadow-indigo-500/20">
                   <s.icon className="h-6 w-6" />
                 </span>
                 <span className="text-5xl font-black text-white/5">
@@ -453,9 +461,9 @@ function Features() {
           {features.map((f) => (
             <div
               key={f.title}
-              className="group rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm transition hover:-translate-y-1 hover:border-amber-400/30 hover:bg-white/[0.05]"
+              className="group rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-sm transition hover:-translate-y-1 hover:border-indigo-400/30 hover:bg-white/[0.05]"
             >
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-400/10 text-amber-400 ring-1 ring-amber-400/20 transition group-hover:bg-amber-400/20">
+              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-400/10 text-indigo-300 ring-1 ring-indigo-400/20 transition group-hover:bg-indigo-400/20">
                 <f.icon className="h-5 w-5" />
               </span>
               <h3 className="mt-4 text-base font-bold text-white">{f.title}</h3>
@@ -619,16 +627,16 @@ function Pricing() {
               key={t.name}
               className={`relative flex flex-col rounded-2xl border p-7 ${
                 t.highlighted
-                  ? "border-amber-400/40 bg-gradient-to-b from-amber-400/[0.07] to-white/[0.02] shadow-2xl shadow-amber-500/10"
+                  ? "border-indigo-400/40 bg-gradient-to-b from-indigo-400/[0.08] to-white/[0.02] shadow-2xl shadow-indigo-500/10"
                   : "border-white/10 bg-white/[0.03]"
               }`}
             >
               {t.highlighted && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 px-3 py-1 text-xs font-bold text-slate-950 shadow-lg shadow-amber-500/30">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-indigo-500 to-violet-600 px-3 py-1 text-xs font-bold text-white shadow-lg shadow-indigo-500/30">
                   Most Popular
                 </span>
               )}
-              <h3 className="text-sm font-bold uppercase tracking-wider text-amber-400">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-indigo-400">
                 {t.name}
               </h3>
               <div className="mt-3 flex items-end gap-1">
@@ -642,7 +650,7 @@ function Pricing() {
               <ul className="mt-6 flex-1 space-y-3">
                 {t.features.map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" />
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-indigo-400" />
                     <span className="text-slate-300">{f}</span>
                   </li>
                 ))}
@@ -651,7 +659,7 @@ function Pricing() {
               <button
                 className={`mt-7 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-bold transition ${
                   t.highlighted
-                    ? "bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 shadow-lg shadow-amber-500/30 hover:shadow-xl hover:shadow-amber-500/40"
+                    ? "bg-gradient-to-r from-indigo-500 to-violet-600 text-white shadow-lg shadow-indigo-500/30 hover:shadow-xl hover:shadow-indigo-500/40"
                     : "border border-white/15 bg-white/5 text-white hover:bg-white/10"
                 }`}
               >
@@ -701,7 +709,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
           {q}
         </span>
         <ChevronDown
-          className={`h-5 w-5 shrink-0 text-amber-400 transition-transform ${
+          className={`h-5 w-5 shrink-0 text-indigo-400 transition-transform ${
             open ? "rotate-180" : ""
           }`}
         />
@@ -747,8 +755,8 @@ function Faq() {
 function FinalCta() {
   return (
     <section className="relative px-4 py-16 sm:px-6 lg:px-8">
-      <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-amber-400/20 bg-gradient-to-br from-amber-400/10 via-slate-900 to-slate-950 px-6 py-14 text-center sm:px-12">
-        <div className="pointer-events-none absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-amber-500/20 blur-[100px]" />
+      <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-indigo-400/20 bg-gradient-to-br from-indigo-500/10 via-slate-900 to-slate-950 px-6 py-14 text-center sm:px-12">
+        <div className="pointer-events-none absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-indigo-500/20 blur-[100px]" />
         <div className="relative">
           <StarRow className="justify-center" />
           <h2 className="mt-4 text-3xl font-extrabold text-white sm:text-4xl">
@@ -759,7 +767,7 @@ function FinalCta() {
             post that sells. No credit card required.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <button className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 px-7 py-3 text-sm font-bold text-slate-950 shadow-lg shadow-amber-500/30 transition hover:shadow-xl hover:shadow-amber-500/40">
+            <button className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-indigo-500 to-violet-600 px-7 py-3 text-sm font-bold text-white shadow-lg shadow-indigo-500/30 transition hover:shadow-xl hover:shadow-indigo-500/40">
               Get Started Free
               <ArrowRight className="h-4 w-4" />
             </button>
@@ -777,13 +785,8 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex flex-col justify-between gap-10 md:flex-row">
           <div className="max-w-sm">
-            <a href="#top" className="flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 shadow-lg shadow-amber-500/30">
-                <Star className="h-5 w-5 fill-slate-950 text-slate-950" />
-              </span>
-              <span className="text-lg font-bold tracking-tight text-white">
-                Star<span className="text-amber-400">Sync</span>
-              </span>
+            <a href="#top">
+              <Wordmark />
             </a>
             <p className="mt-4 text-sm leading-relaxed text-slate-400">
               StarSync turns your 5-star Google reviews into beautiful social
@@ -895,7 +898,7 @@ function SectionHeading({
 }) {
   return (
     <div className="mx-auto max-w-2xl text-center">
-      <span className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-400">
+      <span className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-400">
         {eyebrow}
       </span>
       <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
@@ -914,7 +917,7 @@ function SectionHeading({
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-amber-400/30">
+    <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-indigo-400/30">
       <Navbar />
       <main>
         <Hero />
